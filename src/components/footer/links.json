@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "social_media": {
+      "displayName": "Social Media",
+      "type": "component",
+      "repeatable": true,
+      "component": "social-media.social-media"
+    }
+  }
+}

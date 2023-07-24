@@ -1,28 +1,23 @@
 {
-  "kind": "collectionType",
-  "collectionName": "opening_hours",
+  "collectionName": "components_haarstudio_opening_hours",
   "info": {
-    "singularName": "opening-hour",
-    "pluralName": "opening-hours",
-    "displayName": "opening-hour",
+    "displayName": "Opening Hours",
+    "icon": "clock",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
-    "Start": {
+    "start": {
       "type": "time",
       "default": "08:00",
       "required": true
     },
-    "End": {
+    "end": {
       "type": "time",
-      "required": true,
-      "default": "18:00"
+      "default": "17:00",
+      "required": true
     },
-    "Day": {
+    "day": {
       "type": "enumeration",
       "enum": [
         "Montag",
@@ -32,7 +27,9 @@
         "Freitag",
         "Samstag",
         "Sonntag"
-      ]
+      ],
+      "default": "Montag",
+      "required": true
     }
   }
 }
