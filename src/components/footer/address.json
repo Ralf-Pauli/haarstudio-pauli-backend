@@ -2,27 +2,28 @@
   "collectionName": "components_footer_addresses",
   "info": {
     "displayName": "Address",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "City": {
+    "city": {
       "type": "string",
       "default": "Aholming",
       "required": true
     },
-    "Zip_Code": {
+    "zip_Code": {
       "type": "string",
       "default": "94527",
       "unique": false,
       "required": true
     },
-    "Street": {
+    "street": {
       "type": "string",
       "default": "Lerchenweg",
       "required": true
     },
-    "House_Number": {
+    "house_number": {
       "type": "string",
       "default": "9",
       "required": true

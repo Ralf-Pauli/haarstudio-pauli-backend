@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_navbar_pages",
+  "info": {
+    "displayName": "Page",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

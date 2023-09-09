@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "footers",
+  "collectionName": "contact_pages",
   "info": {
-    "singularName": "footer",
-    "pluralName": "footers",
-    "displayName": "Footer",
-    "description": ""
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "ContactPage"
   },
   "options": {
     "draftAndPublish": true
@@ -22,15 +21,10 @@
       "repeatable": false,
       "component": "footer.contact"
     },
-    "links": {
-      "type": "component",
-      "repeatable": false,
-      "component": "footer.links"
-    },
-    "opening_hours": {
+    "social_media": {
       "type": "component",
       "repeatable": true,
-      "component": "footer.opening-hours"
+      "component": "social-media.social-media"
     }
   }
 }
