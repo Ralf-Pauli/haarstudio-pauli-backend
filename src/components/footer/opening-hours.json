@@ -1,23 +1,23 @@
 {
   "collectionName": "components_haarstudio_opening_hours",
   "info": {
-    "displayName": "Opening Hours",
+    "displayName": "Öffnungszeiten",
     "icon": "clock",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "start": {
+    "Beginn": {
       "type": "time",
       "default": "08:00",
       "required": true
     },
-    "end": {
+    "Ende": {
       "type": "time",
       "default": "17:00",
       "required": true
     },
-    "day": {
+    "Tag": {
       "type": "enumeration",
       "enum": [
         "Montag",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-07-26T18:45:57.223Z"
+    "x-generation-date": "2023-09-13T07:25:06.578Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1338/api",
+      "url": "https://asdjk.de/api",
       "description": "Development server"
     }
   ],
@@ -86,35 +86,6 @@
           }
         }
       },
-      "CategoryLocalizationRequest": {
-        "required": [
-          "name",
-          "locale"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "services": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "string"
-                }
-              ],
-              "example": "string or id"
-            }
-          },
-          "locale": {
-            "type": "string"
-          }
-        }
-      },
       "CategoryRequest": {
         "type": "object",
         "required": [
@@ -123,14 +94,14 @@
         "properties": {
           "data": {
             "required": [
-              "name"
+              "Name"
             ],
             "type": "object",
             "properties": {
-              "name": {
+              "Name": {
                 "type": "string"
               },
-              "services": {
+              "Leistungen": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -142,77 +113,6 @@
                     }
                   ],
                   "example": "string or id"
-                }
-              },
-              "locale": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      },
-      "CategoryResponseDataObjectLocalized": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/Category"
-          }
-        }
-      },
-      "CategoryLocalizationResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CategoryResponseDataObjectLocalized"
-          },
-          "meta": {
-            "type": "object"
-          }
-        }
-      },
-      "CategoryListResponseDataItemLocalized": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "attributes": {
-            "$ref": "#/components/schemas/Category"
-          }
-        }
-      },
-      "CategoryLocalizationListResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CategoryListResponseDataItemLocalized"
-            }
-          },
-          "meta": {
-            "type": "object",
-            "properties": {
-              "pagination": {
-                "type": "object",
-                "properties": {
-                  "page": {
-                    "type": "integer"
-                  },
-                  "pageSize": {
-                    "type": "integer",
-                    "minimum": 25
-                  },
-                  "pageCount": {
-                    "type": "integer",
-                    "maximum": 1
-                  },
-                  "total": {
-                    "type": "integer"
-                  }
                 }
               }
             }
@@ -268,13 +168,13 @@
       "Category": {
         "type": "object",
         "required": [
-          "name"
+          "Name"
         ],
         "properties": {
-          "name": {
+          "Name": {
             "type": "string"
           },
-          "services": {
+          "Leistungen": {
             "type": "object",
             "properties": {
               "data": {
@@ -291,7 +191,7 @@
                         "Name": {
                           "type": "string"
                         },
-                        "Price": {
+                        "Preis": {
                           "type": "number",
                           "format": "float"
                         },
@@ -644,20 +544,6 @@
                 }
               }
             }
-          },
-          "localizations": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Category"
-                }
-              }
-            }
-          },
-          "locale": {
-            "type": "string"
           }
         }
       },
@@ -692,7 +578,7 @@
           "data": {
             "type": "object",
             "properties": {
-              "address": {
+              "Adresse": {
                 "$ref": "#/components/schemas/FooterAddressComponent"
               },
               "contact": {
@@ -757,7 +643,7 @@
       "ContactPage": {
         "type": "object",
         "properties": {
-          "address": {
+          "Adresse": {
             "$ref": "#/components/schemas/FooterAddressComponent"
           },
           "contact": {
@@ -845,16 +731,16 @@
           "id": {
             "type": "number"
           },
-          "city": {
+          "Stadt": {
             "type": "string"
           },
-          "zip_Code": {
+          "Postleitzahl": {
             "type": "string"
           },
-          "street": {
+          "Strasse": {
             "type": "string"
           },
-          "house_number": {
+          "Hausnummer": {
             "type": "string"
           }
         }
@@ -865,7 +751,7 @@
           "id": {
             "type": "number"
           },
-          "phone_number": {
+          "Telefonnummer": {
             "type": "string"
           }
         }
@@ -876,7 +762,7 @@
           "id": {
             "type": "number"
           },
-          "icon": {
+          "Icon": {
             "type": "object",
             "properties": {
               "data": {
@@ -1497,10 +1383,10 @@
               }
             }
           },
-          "name": {
+          "Name": {
             "type": "string"
           },
-          "link": {
+          "Link": {
             "type": "string"
           }
         }
@@ -1514,16 +1400,16 @@
           "data": {
             "type": "object",
             "properties": {
-              "address": {
+              "Addresse": {
                 "$ref": "#/components/schemas/FooterAddressComponent"
               },
-              "contact": {
+              "Kontakt": {
                 "$ref": "#/components/schemas/FooterContactComponent"
               },
-              "links": {
+              "Links": {
                 "$ref": "#/components/schemas/FooterLinksComponent"
               },
-              "opening_hours": {
+              "Oeffungszeiten": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/FooterOpeningHoursComponent"
@@ -1582,16 +1468,16 @@
       "Footer": {
         "type": "object",
         "properties": {
-          "address": {
+          "Addresse": {
             "$ref": "#/components/schemas/FooterAddressComponent"
           },
-          "contact": {
+          "Kontakt": {
             "$ref": "#/components/schemas/FooterContactComponent"
           },
-          "links": {
+          "Links": {
             "$ref": "#/components/schemas/FooterLinksComponent"
           },
-          "opening_hours": {
+          "Oeffungszeiten": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FooterOpeningHoursComponent"
@@ -1673,7 +1559,7 @@
           "id": {
             "type": "number"
           },
-          "social_media": {
+          "Social_Media": {
             "type": "array",
             "items": {
               "type": "object",
@@ -1681,7 +1567,7 @@
                 "id": {
                   "type": "number"
                 },
-                "icon": {
+                "Icon": {
                   "type": "object",
                   "properties": {
                     "data": {
@@ -2302,10 +2188,10 @@
                     }
                   }
                 },
-                "name": {
+                "Name": {
                   "type": "string"
                 },
-                "link": {
+                "Link": {
                   "type": "string"
                 }
               }
@@ -2319,17 +2205,17 @@
           "id": {
             "type": "number"
           },
-          "start": {
+          "Beginn": {
             "type": "string",
             "format": "time",
             "example": "12:54.000"
           },
-          "end": {
+          "Ende": {
             "type": "string",
             "format": "time",
             "example": "12:54.000"
           },
-          "day": {
+          "Tag": {
             "type": "string",
             "enum": [
               "Montag",
@@ -3131,7 +3017,7 @@
           "id": {
             "type": "number"
           },
-          "title": {
+          "Titel": {
             "type": "string"
           }
         }
@@ -3145,14 +3031,14 @@
           "data": {
             "required": [
               "Name",
-              "Price"
+              "Preis"
             ],
             "type": "object",
             "properties": {
               "Name": {
                 "type": "string"
               },
-              "Price": {
+              "Preis": {
                 "type": "number",
                 "format": "float"
               }
@@ -3210,13 +3096,13 @@
         "type": "object",
         "required": [
           "Name",
-          "Price"
+          "Preis"
         ],
         "properties": {
           "Name": {
             "type": "string"
           },
-          "Price": {
+          "Preis": {
             "type": "number",
             "format": "float"
           },
@@ -3550,14 +3436,14 @@
           "data": {
             "required": [
               "Titel",
-              "Image"
+              "Bild"
             ],
             "type": "object",
             "properties": {
               "Titel": {
                 "type": "string"
               },
-              "Image": {
+              "Bild": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -3568,7 +3454,7 @@
                 ],
                 "example": "string or id"
               },
-              "category": {
+              "Kategorien": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -3633,13 +3519,13 @@
         "type": "object",
         "required": [
           "Titel",
-          "Image"
+          "Bild"
         ],
         "properties": {
           "Titel": {
             "type": "string"
           },
-          "Image": {
+          "Bild": {
             "type": "object",
             "properties": {
               "data": {
@@ -4260,7 +4146,7 @@
               }
             }
           },
-          "category": {
+          "Kategorien": {
             "type": "object",
             "properties": {
               "data": {
@@ -4272,10 +4158,10 @@
                   "attributes": {
                     "type": "object",
                     "properties": {
-                      "name": {
+                      "Name": {
                         "type": "string"
                       },
-                      "services": {
+                      "Leistungen": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -4292,7 +4178,7 @@
                                     "Name": {
                                       "type": "string"
                                     },
-                                    "Price": {
+                                    "Preis": {
                                       "type": "number",
                                       "format": "float"
                                     },
@@ -4394,18 +4280,6 @@
                             }
                           }
                         }
-                      },
-                      "localizations": {
-                        "type": "object",
-                        "properties": {
-                          "data": {
-                            "type": "array",
-                            "items": {}
-                          }
-                        }
-                      },
-                      "locale": {
-                        "type": "string"
                       }
                     }
                   }
@@ -5194,98 +5068,6 @@
           }
         ],
         "operationId": "delete/categories/{id}"
-      }
-    },
-    "/categories/{id}/localizations": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CategoryLocalizationResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Category"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "number"
-            }
-          }
-        ],
-        "operationId": "post/categories/{id}/localizations",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryLocalizationRequest"
-              }
-            }
-          }
-        }
       }
     },
     "/contact-page": {
@@ -7599,7 +7381,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successfull registration",
+            "description": "Successful registration",
             "content": {
               "application/json": {
                 "schema": {

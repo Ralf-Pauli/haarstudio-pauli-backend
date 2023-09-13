@@ -4,14 +4,19 @@
   "info": {
     "singularName": "contact-page",
     "pluralName": "contact-pages",
-    "displayName": "ContactPage"
+    "displayName": "Kontakt-Seite",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "versions": {
+      "versioned": true
+    }
+  },
   "attributes": {
-    "address": {
+    "Adresse": {
       "type": "component",
       "repeatable": false,
       "component": "footer.address"

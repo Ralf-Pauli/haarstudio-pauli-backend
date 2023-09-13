@@ -1,13 +1,13 @@
 {
   "collectionName": "components_navbar_pages",
   "info": {
-    "displayName": "Page",
+    "displayName": "Seite",
     "icon": "layout",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Titel": {
       "type": "string",
       "required": true
     }
