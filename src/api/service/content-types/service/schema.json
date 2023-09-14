@@ -4,19 +4,25 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service"
+    "displayName": "Leistung",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "versions": {
+      "versioned": true
+    }
+  },
   "attributes": {
     "Name": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "minLength": 1
     },
-    "Price": {
+    "Preis": {
       "type": "decimal",
       "required": true,
       "unique": false,

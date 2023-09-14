@@ -4,7 +4,7 @@
   "info": {
     "singularName": "service-card",
     "pluralName": "service-cards",
-    "displayName": "Service Card",
+    "displayName": "Kategorien Kachel",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "Image": {
+    "Bild": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -24,7 +24,7 @@
         "images"
       ]
     },
-    "category": {
+    "Kategorien": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"

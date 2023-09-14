@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category",
+    "displayName": "Kategorie",
     "description": ""
   },
   "options": {
@@ -13,10 +13,13 @@
   "pluginOptions": {
     "i18n": {
       "localized": true
+    },
+    "versions": {
+      "versioned": true
     }
   },
   "attributes": {
-    "name": {
+    "Name": {
       "type": "string",
       "required": true,
       "unique": true,
@@ -24,9 +27,10 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "minLength": 1
     },
-    "services": {
+    "Leistungen": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service.service"
