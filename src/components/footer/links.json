@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "Social_Media": {
+    "social_media": {
       "displayName": "Social Media",
       "type": "component",
       "repeatable": true,

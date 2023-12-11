@@ -7,9 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "Titel": {
+    "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 1
     }
   }
 }

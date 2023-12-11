@@ -1,5 +1,5 @@
 {
-  "/navbar": {
+  "/imprint": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NavbarResponse"
+                "$ref": "#/components/schemas/ImprintResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Navbar"
+        "Imprint"
       ],
       "parameters": [
         {
@@ -169,7 +169,7 @@
           }
         }
       ],
-      "operationId": "get/navbar"
+      "operationId": "get/imprint"
     },
     "put": {
       "responses": {
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NavbarResponse"
+                "$ref": "#/components/schemas/ImprintResponse"
               }
             }
           }
@@ -235,16 +235,16 @@
         }
       },
       "tags": [
-        "Navbar"
+        "Imprint"
       ],
       "parameters": [],
-      "operationId": "put/navbar",
+      "operationId": "put/imprint",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/NavbarRequest"
+              "$ref": "#/components/schemas/ImprintRequest"
             }
           }
         }
@@ -315,10 +315,10 @@
         }
       },
       "tags": [
-        "Navbar"
+        "Imprint"
       ],
       "parameters": [],
-      "operationId": "delete/navbar"
+      "operationId": "delete/imprint"
     }
   }
 }

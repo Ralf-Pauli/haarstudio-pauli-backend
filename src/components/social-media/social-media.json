@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "Icon": {
+    "icon": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -15,11 +15,12 @@
         "images"
       ]
     },
-    "Name": {
+    "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 1
     },
-    "Link": {
+    "url": {
       "type": "string",
       "required": true
     }

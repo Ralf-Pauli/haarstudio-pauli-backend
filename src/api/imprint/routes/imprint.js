@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * navbar router
+ * imprint router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::navbar.navbar');
+module.exports = createCoreRouter('api::imprint.imprint');

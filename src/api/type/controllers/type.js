@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * navbar controller
+ * type controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::navbar.navbar');
+module.exports = createCoreController('api::type.type');

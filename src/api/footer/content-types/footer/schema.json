@@ -12,22 +12,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Addresse": {
+    "address": {
       "type": "component",
       "repeatable": false,
       "component": "footer.address"
     },
-    "Kontakt": {
+    "contact": {
       "type": "component",
       "repeatable": false,
       "component": "footer.contact"
     },
-    "Links": {
+    "links": {
       "type": "component",
       "repeatable": false,
       "component": "footer.links"
     },
-    "Oeffungszeiten": {
+    "opening_hours": {
       "type": "component",
       "repeatable": true,
       "component": "footer.opening-hours"

@@ -7,17 +7,17 @@
   },
   "options": {},
   "attributes": {
-    "Beginn": {
+    "begin": {
       "type": "time",
       "default": "08:00",
       "required": true
     },
-    "Ende": {
+    "end": {
       "type": "time",
       "default": "17:00",
       "required": true
     },
-    "Tag": {
+    "day": {
       "type": "enumeration",
       "enum": [
         "Montag",

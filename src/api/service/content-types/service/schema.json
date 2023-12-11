@@ -16,17 +16,23 @@
     }
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true,
       "minLength": 1
     },
-    "Preis": {
+    "price": {
       "type": "decimal",
       "required": true,
       "unique": false,
-      "min": 0
+      "min": 0,
+      "default": 0
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type.type"
     }
   }
 }

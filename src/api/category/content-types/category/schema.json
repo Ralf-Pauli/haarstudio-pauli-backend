@@ -19,7 +19,7 @@
     }
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true,
@@ -30,7 +30,7 @@
       },
       "minLength": 1
     },
-    "Leistungen": {
+    "services": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service.service"

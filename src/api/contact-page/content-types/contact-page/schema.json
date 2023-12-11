@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Adresse": {
+    "address": {
       "type": "component",
       "repeatable": false,
       "component": "footer.address"

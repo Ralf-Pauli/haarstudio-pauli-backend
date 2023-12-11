@@ -7,10 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "Telefonnummer": {
+    "phone_number": {
       "type": "string",
       "required": true,
-      "default": "+49 151 24235034"
+      "default": "+49 15124235034"
     }
   }
 }

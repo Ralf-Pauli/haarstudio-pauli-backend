@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * navbar service
+ * imprint service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::navbar.navbar');
+module.exports = createCoreService('api::imprint.imprint');
