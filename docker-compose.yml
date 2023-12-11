@@ -1,33 +1,22 @@
 version: "3"
 services:
-  haarstudio-pauli-strapi:
-    container_name: haarstudio-pauli-strapi
-    build: .
-    image: strapi:latest
+  haarstudio-pauli-backend:
+    container_name: haarstudio-pauli-backend
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: haarstudio-pauli-backend:latest
     restart: unless-stopped
     env_file: .env
-    environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: strapiDB
-      DATABASE_FILENAME: ${DATABASE_FILENAME}
-      # DATABASE_PORT: ${DATABASE_PORT}
-      # DATABASE_NAME: ${DATABASE_NAME}
-      # DATABASE_USERNAME: ${DATABASE_USERNAME}
-      # DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
-    volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
     ports:
       - "1337:1337"
+    networks:
+      - haarstudio-pauli-backend
 
 volumes:
-  strapi-data:
+  haarstudio-pauli-backend-data:
 
+networks:
+  haarstudio-pauli-backend:
+    name: Haarstudio-pauli-backend
+    driver: bridge

@@ -15,7 +15,7 @@
     "@strapi/plugin-users-permissions": "4.15.5",
     "@strapi/strapi": "4.15.5",
     "better-sqlite3": "8.0.1",
-    "pg": "^8.11.1",
+    "mysql": "^2.18.1",
     "strapi-plugin-cloudflare-pages": "^0.5.0",
     "strapi-plugin-multi-select": "^1.2.2",
     "strapi-plugin-transformer": "^3.1.1"
