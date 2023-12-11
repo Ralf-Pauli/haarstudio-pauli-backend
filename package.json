@@ -1,12 +1,16 @@
 {
   "name": "haarstudio-pauli-backend",
-  "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "private": true,
+  "description": "Haarstudio Pauli Backend",
+  "license": "MIT",
+  "author": {
+    "name": "Ralf-Pauli"
+  },
   "scripts": {
+    "build": "strapi build",
     "dev": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -15,20 +19,15 @@
     "@strapi/plugin-users-permissions": "4.15.5",
     "@strapi/strapi": "4.15.5",
     "better-sqlite3": "8.0.1",
-    "mysql": "^2.18.1",
     "strapi-plugin-cloudflare-pages": "^0.5.0",
     "strapi-plugin-multi-select": "^1.2.2",
-    "strapi-plugin-transformer": "^3.1.1"
-  },
-  "author": {
-    "name": "Ralf-Pauli"
-  },
-  "strapi": {
-    "uuid": "f64551cc-a47a-46e9-9785-2d31758c4328"
+    "strapi-plugin-transformer": "^3.1.2"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "f64551cc-a47a-46e9-9785-2d31758c4328"
+  }
 }
