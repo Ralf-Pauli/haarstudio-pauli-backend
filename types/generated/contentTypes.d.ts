@@ -482,6 +482,97 @@ export interface PluginUploadFolder extends Schema.CollectionType {
   };
 }
 
+export interface PluginContentReleasesRelease extends Schema.CollectionType {
+  collectionName: 'strapi_releases';
+  info: {
+    singularName: 'release';
+    pluralName: 'releases';
+    displayName: 'Release';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    releasedAt: Attribute.DateTime;
+    actions: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToMany',
+      'plugin::content-releases.release-action'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::content-releases.release',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginContentReleasesReleaseAction
+  extends Schema.CollectionType {
+  collectionName: 'strapi_release_actions';
+  info: {
+    singularName: 'release-action';
+    pluralName: 'release-actions';
+    displayName: 'Release Action';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    type: Attribute.Enumeration<['publish', 'unpublish']> & Attribute.Required;
+    entry: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'morphToOne'
+    >;
+    contentType: Attribute.String & Attribute.Required;
+    release: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'manyToOne',
+      'plugin::content-releases.release'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::content-releases.release-action',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginGoogleMapsConfig extends Schema.SingleType {
   collectionName: 'google_maps_configs';
   info: {
@@ -732,7 +823,7 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   info: {
     singularName: 'contact-page';
     pluralName: 'contact-pages';
-    displayName: 'Kontakt-Seite';
+    displayName: 'Kontakt';
     description: '';
   };
   options: {
@@ -744,9 +835,10 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
     };
   };
   attributes: {
-    address: Attribute.Component<'footer.address'>;
-    contact: Attribute.Component<'footer.contact'>;
-    social_media: Attribute.Component<'social-media.social-media', true>;
+    address: Attribute.Component<'contact.address'>;
+    details: Attribute.Component<'contact.contact'>;
+    social_media: Attribute.Component<'contact.social-media', true>;
+    opening_hours: Attribute.Component<'footer.opening-hours', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -777,9 +869,8 @@ export interface ApiFooterFooter extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    address: Attribute.Component<'footer.address'>;
-    contact: Attribute.Component<'footer.contact'>;
-    links: Attribute.Component<'footer.links'>;
+    address: Attribute.Component<'contact.address'>;
+    contact: Attribute.Component<'contact.contact'>;
     opening_hours: Attribute.Component<'footer.opening-hours', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -792,6 +883,37 @@ export interface ApiFooterFooter extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Schema.SingleType {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Galerie';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    images: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
       'oneToOne',
       'admin::user'
     > &
@@ -959,6 +1081,8 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
+      'plugin::content-releases.release': PluginContentReleasesRelease;
+      'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::google-maps.config': PluginGoogleMapsConfig;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
@@ -966,6 +1090,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::footer.footer': ApiFooterFooter;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::imprint.imprint': ApiImprintImprint;
       'api::service.service': ApiServiceService;
       'api::service-card.service-card': ApiServiceCardServiceCard;

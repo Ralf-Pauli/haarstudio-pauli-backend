@@ -4,7 +4,7 @@
   "info": {
     "singularName": "contact-page",
     "pluralName": "contact-pages",
-    "displayName": "Kontakt-Seite",
+    "displayName": "Kontakt",
     "description": ""
   },
   "options": {
@@ -19,17 +19,22 @@
     "address": {
       "type": "component",
       "repeatable": false,
-      "component": "footer.address"
+      "component": "contact.address"
     },
-    "contact": {
+    "details": {
       "type": "component",
       "repeatable": false,
-      "component": "footer.contact"
+      "component": "contact.contact"
     },
     "social_media": {
       "type": "component",
       "repeatable": true,
-      "component": "social-media.social-media"
+      "component": "contact.social-media"
+    },
+    "opening_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.opening-hours"
     }
   }
 }

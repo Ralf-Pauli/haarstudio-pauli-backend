@@ -15,17 +15,12 @@
     "address": {
       "type": "component",
       "repeatable": false,
-      "component": "footer.address"
+      "component": "contact.address"
     },
     "contact": {
       "type": "component",
       "repeatable": false,
-      "component": "footer.contact"
-    },
-    "links": {
-      "type": "component",
-      "repeatable": false,
-      "component": "footer.links"
+      "component": "contact.contact"
     },
     "opening_hours": {
       "type": "component",

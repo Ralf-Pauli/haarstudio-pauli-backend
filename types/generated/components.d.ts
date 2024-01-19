@@ -1,6 +1,6 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface FooterAddress extends Schema.Component {
+export interface ContactAddress extends Schema.Component {
   collectionName: 'components_footer_addresses';
   info: {
     displayName: 'address';
@@ -29,10 +29,10 @@ export interface FooterAddress extends Schema.Component {
   };
 }
 
-export interface FooterContact extends Schema.Component {
+export interface ContactContact extends Schema.Component {
   collectionName: 'components_footer_contacts';
   info: {
-    displayName: 'Kontakte';
+    displayName: 'Details';
     icon: 'envelop';
     description: '';
   };
@@ -43,61 +43,7 @@ export interface FooterContact extends Schema.Component {
   };
 }
 
-export interface FooterLinks extends Schema.Component {
-  collectionName: 'components_footer_links';
-  info: {
-    displayName: 'Links';
-    icon: 'link';
-    description: '';
-  };
-  attributes: {
-    social_media: Attribute.Component<'social-media.social-media', true>;
-  };
-}
-
-export interface FooterOpeningHours extends Schema.Component {
-  collectionName: 'components_haarstudio_opening_hours';
-  info: {
-    displayName: '\u00D6ffnungszeiten';
-    icon: 'clock';
-    description: '';
-  };
-  attributes: {
-    begin: Attribute.Time & Attribute.Required & Attribute.DefaultTo<'08:00'>;
-    end: Attribute.Time & Attribute.Required & Attribute.DefaultTo<'17:00'>;
-    day: Attribute.Enumeration<
-      [
-        'Montag',
-        'Dienstag',
-        'Mittwoch',
-        'Donnerstag',
-        'Freitag',
-        'Samstag',
-        'Sonntag'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Montag'>;
-  };
-}
-
-export interface NavbarPages extends Schema.Component {
-  collectionName: 'components_navbar_pages';
-  info: {
-    displayName: 'Seite';
-    icon: 'layout';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
-  };
-}
-
-export interface SocialMediaSocialMedia extends Schema.Component {
+export interface ContactSocialMedia extends Schema.Component {
   collectionName: 'components_social_media_social_medias';
   info: {
     displayName: 'Social Media';
@@ -115,15 +61,40 @@ export interface SocialMediaSocialMedia extends Schema.Component {
   };
 }
 
+export interface FooterOpeningHours extends Schema.Component {
+  collectionName: 'components_haarstudio_opening_hours';
+  info: {
+    displayName: '\u00D6ffnungszeiten';
+    icon: 'clock';
+    description: '';
+  };
+  attributes: {
+    begin: Attribute.Time & Attribute.DefaultTo<'08:00'>;
+    end: Attribute.Time & Attribute.DefaultTo<'18:00'>;
+    day: Attribute.Enumeration<
+      [
+        'Montag',
+        'Dienstag',
+        'Mittwoch',
+        'Donnerstag',
+        'Freitag',
+        'Samstag',
+        'Sonntag'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Montag'>;
+    closed: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'footer.address': FooterAddress;
-      'footer.contact': FooterContact;
-      'footer.links': FooterLinks;
+      'contact.address': ContactAddress;
+      'contact.contact': ContactContact;
+      'contact.social-media': ContactSocialMedia;
       'footer.opening-hours': FooterOpeningHours;
-      'navbar.pages': NavbarPages;
-      'social-media.social-media': SocialMediaSocialMedia;
     }
   }
 }
