@@ -1,9 +1,7 @@
 node_modules/
+build/
 .cache/
 .git/
-build/
 data/
 backup/
 .env.example
-.env
-Dockerfile*
