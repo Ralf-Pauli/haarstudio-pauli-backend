@@ -2,21 +2,8 @@ version: "3"
 services:
   haarstudio-pauli-backend:
     container_name: haarstudio-pauli-backend
-    build:
-      context: .
-      dockerfile: Dockerfile.prod
-    image: haarstudio-pauli-backend:latest
+    build: .
     restart: unless-stopped
     env_file: .env
     ports:
-      - "1337:1337"
-    networks:
-      - haarstudio-pauli-backend
-
-volumes:
-  haarstudio-pauli-backend-data:
-
-networks:
-  haarstudio-pauli-backend:
-    name: Haarstudio-pauli-backend
-    driver: bridge
+      - "32307:1337"
