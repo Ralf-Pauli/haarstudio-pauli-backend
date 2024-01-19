@@ -10,12 +10,12 @@
     "begin": {
       "type": "time",
       "default": "08:00",
-      "required": true
+      "required": false
     },
     "end": {
       "type": "time",
-      "default": "17:00",
-      "required": true
+      "default": "18:00",
+      "required": false
     },
     "day": {
       "type": "enumeration",
@@ -29,6 +29,11 @@
         "Sonntag"
       ],
       "default": "Montag",
+      "required": true
+    },
+    "closed": {
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }
